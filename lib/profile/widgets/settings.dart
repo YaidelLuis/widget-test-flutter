@@ -29,7 +29,7 @@ class _SettingsState extends State<Settings> {
                 CustomListTile(
                   title: "Dark Mode",
                   icon: Icons.dark_mode_outlined,
-                  trailing: Switch(
+                  child: Switch(
                     activeColor: Colors.white,
                     activeTrackColor: Colors.green.shade400,
                     value: _isDark,
@@ -45,7 +45,7 @@ class _SettingsState extends State<Settings> {
                 CustomListTile(
                   title: "Notifications",
                   icon: Icons.notifications_none_rounded,
-                  trailing: Switch(
+                  child: Switch(
                     activeColor: Colors.white,
                     activeTrackColor: Colors.green.shade400,
                     value: _onNotfications,
