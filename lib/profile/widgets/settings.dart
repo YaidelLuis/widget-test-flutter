@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:mytest/profile/widgets/custom_list_tile.dart';
 import 'package:mytest/profile/widgets/single_section.dart';
+import 'package:mytest/utils/commons.dart';
+import 'package:provider/provider.dart';
 
 class Settings extends StatefulWidget {
   const Settings({super.key});
@@ -34,6 +36,10 @@ class _SettingsState extends State<Settings> {
                       setState(() {
                         _isDark = value;
                       });
+                      final themeProvider =
+                          Provider.of<ThemeProvider>(context, listen: false);
+                      themeProvider.setTheme(
+                          _isDark ? ThemeData.dark() : ThemeData.light());
                     },
                   ),
                 ),

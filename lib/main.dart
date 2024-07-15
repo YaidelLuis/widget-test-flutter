@@ -4,9 +4,16 @@ import 'package:mytest/dropdown/dropdown.dart';
 import 'package:mytest/expandable/expandable_title.dart';
 import 'package:mytest/profile/profile_screen.dart';
 import 'package:mytest/search/search.dart';
+import 'package:mytest/utils/commons.dart';
+import 'package:provider/provider.dart';
 
 void main() {
-  runApp(const TestApp());
+  runApp(
+    ChangeNotifierProvider(
+      create: (context) => ThemeProvider(ThemeData.light()),
+      child: const TestApp(),
+    ),
+  );
 }
 
 class TestApp extends StatelessWidget {
@@ -14,9 +21,11 @@ class TestApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    final themeProvider = Provider.of<ThemeProvider>(context);
+    return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: MyHomePage(),
+      home: const MyHomePage(),
+      theme: themeProvider.getTheme(),
     );
   }
 }
