@@ -17,6 +17,7 @@ class _SettingsState extends State<Settings> {
 
   @override
   Widget build(BuildContext context) {
+    final themeProvider = Provider.of<ThemeProvider>(context, listen: true);
     return Theme(
       data: _isDark ? ThemeData.dark() : ThemeData.light(),
       child: Center(
@@ -36,8 +37,6 @@ class _SettingsState extends State<Settings> {
                       setState(() {
                         _isDark = value;
                       });
-                      final themeProvider =
-                          Provider.of<ThemeProvider>(context, listen: false);
                       themeProvider.setTheme(
                           _isDark ? ThemeData.dark() : ThemeData.light());
                     },
