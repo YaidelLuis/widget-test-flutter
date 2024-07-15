@@ -7,7 +7,6 @@ class DropdownScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: const Color(0xff006df1),
         leading: IconButton(
           icon: const Icon(Icons.arrow_back),
           onPressed: () {
