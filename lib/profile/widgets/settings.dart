@@ -14,6 +14,7 @@ class Settings extends StatefulWidget {
 class _SettingsState extends State<Settings> {
   bool _isDark = false;
   bool _onNotfications = false;
+  bool _isSpanish = false;
 
   @override
   Widget build(BuildContext context) {
@@ -56,48 +57,64 @@ class _SettingsState extends State<Settings> {
                     },
                   ),
                 ),
+                CustomListTile(
+                  title: "Lenguage",
+                  icon: Icons.notifications_none_rounded,
+                  child: Switch(
+                    activeColor: Colors.white,
+                    activeTrackColor: Colors.green.shade400,
+                    value: _isSpanish,
+                    onChanged: (value) {
+                      setState(() {
+                        _isSpanish = value;
+                      });
+                    },
+                  ),
+                ),
               ],
             ),
             const Divider(),
-            const SingleSection(
-              title: "Organization",
+            SingleSection(
+              title: "Profile",
               children: [
                 CustomListTile(
-                  title: "Profile",
+                  title: "Edit Profile",
                   icon: Icons.person_outline_rounded,
+                  child: IconButton(
+                      onPressed: () {},
+                      icon: const Icon(Icons.arrow_forward_ios)),
                 ),
                 CustomListTile(
-                  title: "Messaging",
-                  icon: Icons.message_outlined,
-                ),
-                CustomListTile(
-                  title: "Calling",
-                  icon: Icons.phone_outlined,
-                ),
-                CustomListTile(
-                  title: "People",
-                  icon: Icons.contacts_outlined,
-                ),
-                CustomListTile(
-                  title: "Calendar",
-                  icon: Icons.calendar_today_rounded,
-                ),
-              ],
-            ),
-            const Divider(),
-            const SingleSection(
-              children: [
-                CustomListTile(
-                  title: "Help & Feedback",
-                  icon: Icons.help_outline_rounded,
-                ),
-                CustomListTile(
-                  title: "About",
-                  icon: Icons.info_outline_rounded,
+                  title: "Change Password",
+                  icon: Icons.password,
+                  child: IconButton(
+                      onPressed: () {},
+                      icon: const Icon(Icons.arrow_forward_ios)),
                 ),
                 CustomListTile(
                   title: "Sign out",
                   icon: Icons.exit_to_app_rounded,
+                  child: IconButton(
+                      onPressed: () {},
+                      icon: const Icon(Icons.arrow_forward_ios)),
+                ),
+              ],
+            ),
+            const Divider(),
+            SingleSection(
+              children: [
+                const CustomListTile(
+                  title: "Share Autoassistenza",
+                  icon: Icons.share_outlined,
+                ),
+                const CustomListTile(
+                  title: "About",
+                  icon: Icons.info_outline_rounded,
+                ),
+                CustomListTile(
+                  title: "Delete account",
+                  icon: Icons.delete_forever_rounded,
+                  color: Colors.red[800],
                 ),
               ],
             ),
