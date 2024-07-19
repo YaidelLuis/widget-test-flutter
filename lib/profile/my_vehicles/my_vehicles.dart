@@ -49,7 +49,7 @@ class MyVehiclesState extends State<MyVehicles> {
                   ),
                   const SizedBox(height: 20),
                   Text(
-                    'Cuando añadas tu(s) vehículo(s) podrás visualizar una lista con los elementos los cuales podrás editarlos o eliminarlos en cualquier momento.',
+                    'Para añadir un nuevo vehículo presione el signo + \n Cuando sean añadidos podrás visualizarlos en una lista y podrás editarlos o eliminarlos en cualquier momento.',
                     style: Theme.of(context)
                         .textTheme
                         .titleMedium

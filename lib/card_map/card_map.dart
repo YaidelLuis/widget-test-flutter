@@ -144,7 +144,8 @@ class CardInfoMapState extends State<CardInfoMap>
                       Expanded(
                         child: ElevatedButton(
                           onPressed: () {},
-                          child: const SizedBox(
+                          child: const FittedBox(
+                            fit: BoxFit.scaleDown,
                             child: Row(
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: [
@@ -164,7 +165,8 @@ class CardInfoMapState extends State<CardInfoMap>
                       Expanded(
                         child: ElevatedButton(
                           onPressed: () {},
-                          child: const SizedBox(
+                          child: const FittedBox(
+                            fit: BoxFit.scaleDown,
                             child: Row(
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: [
