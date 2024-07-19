@@ -118,12 +118,12 @@ class CardInfoMapState extends State<CardInfoMap>
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Flexible(
+                      Expanded(
                         child: Text(widget.businessType,
                             style: const TextStyle(fontSize: 14)),
                       ),
                       const SizedBox(height: 15),
-                      Flexible(
+                      Expanded(
                         child: Row(
                           children: List.generate(
                               5,
