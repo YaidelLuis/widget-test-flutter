@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mytest/profile/my_vehicles/my_vehicles.dart';
 import 'package:mytest/profile/widgets/custom_list_tile.dart';
 import 'package:mytest/profile/widgets/single_section.dart';
 import 'package:mytest/utils/commons.dart';
@@ -106,6 +107,19 @@ class _SettingsState extends State<Settings> {
                 const Divider(),
                 SingleSection(
                   children: [
+                    CustomListTile(
+                      title: "My vehicles",
+                      icon: Icons.directions_car,
+                      child: IconButton(
+                          onPressed: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => const MyVehicles()),
+                            );
+                          },
+                          icon: const Icon(Icons.arrow_forward_ios)),
+                    ),
                     const CustomListTile(
                       title: "Share Autoassistenza",
                       icon: Icons.share_outlined,

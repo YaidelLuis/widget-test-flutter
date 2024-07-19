@@ -104,66 +104,85 @@ class CardInfoMapState extends State<CardInfoMap>
                 BoxShadow(
                     color: Colors.grey, offset: Offset(0, 10), blurRadius: 10),
               ]),
-          child: Column(
-            mainAxisSize: MainAxisSize.min,
-            children: <Widget>[
-              Text(widget.title,
-                  style: const TextStyle(
-                      fontSize: 22, fontWeight: FontWeight.w600)),
-              const SizedBox(height: 15),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Text(widget.businessType,
-                      style: const TextStyle(fontSize: 14)),
-                  const SizedBox(height: 15),
-                  Row(
-                    children: List.generate(
-                        5,
-                        (index) => Icon(Icons.star,
-                            color: index < widget.rating
-                                ? Colors.yellow
-                                : Colors.grey)),
-                  ),
-                ],
-              ),
-              const SizedBox(height: 22),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: <Widget>[
-                  ElevatedButton(
-                    onPressed: () {},
-                    child: const SizedBox(
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Icon(Icons.info_outline_rounded),
-                          SizedBox(
-                            width: 8,
-                          ),
-                          Text('Ver info'),
-                        ],
+          child: SingleChildScrollView(
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              children: <Widget>[
+                Flexible(
+                  child: Text(widget.title,
+                      style: const TextStyle(
+                          fontSize: 22, fontWeight: FontWeight.w600)),
+                ),
+                const SizedBox(height: 15),
+                Flexible(
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Flexible(
+                        child: Text(widget.businessType,
+                            style: const TextStyle(fontSize: 14)),
                       ),
-                    ),
-                  ),
-                  ElevatedButton(
-                    onPressed: () {},
-                    child: const SizedBox(
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Icon(Icons.roundabout_right_outlined),
-                          SizedBox(
-                            width: 8,
-                          ),
-                          Text('Ver ruta'),
-                        ],
+                      const SizedBox(height: 15),
+                      Flexible(
+                        child: Row(
+                          children: List.generate(
+                              5,
+                              (index) => Icon(Icons.star,
+                                  color: index < widget.rating
+                                      ? Colors.yellow
+                                      : Colors.grey)),
+                        ),
                       ),
-                    ),
+                    ],
                   ),
-                ],
-              ),
-            ],
+                ),
+                const SizedBox(height: 22),
+                Flexible(
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: <Widget>[
+                      Expanded(
+                        child: ElevatedButton(
+                          onPressed: () {},
+                          child: const SizedBox(
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Icon(Icons.info_outline_rounded),
+                                SizedBox(
+                                  width: 8,
+                                ),
+                                Text('Ver info'),
+                              ],
+                            ),
+                          ),
+                        ),
+                      ),
+                      const SizedBox(
+                        width: 10,
+                      ),
+                      Expanded(
+                        child: ElevatedButton(
+                          onPressed: () {},
+                          child: const SizedBox(
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Icon(Icons.roundabout_right_outlined),
+                                SizedBox(
+                                  width: 8,
+                                ),
+                                Text('Ver ruta'),
+                              ],
+                            ),
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ],
+            ),
           ),
         ),
       ],
