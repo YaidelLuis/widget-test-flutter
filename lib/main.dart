@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mytest/calendar/calendar.dart';
+import 'package:mytest/card_map/card_map.dart';
 import 'package:mytest/dropdown/dropdown.dart';
 import 'package:mytest/expandable/expandable_title.dart';
 import 'package:mytest/profile/profile_screen.dart';
@@ -154,6 +155,28 @@ class MyHomePage extends StatelessWidget {
                       width: 8,
                     ),
                     Text('Dropdown carga map'),
+                  ],
+                ),
+              ),
+            ),
+            //! Widget para mapa card info>
+            ElevatedButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const CardMap()),
+                );
+              },
+              child: const SizedBox(
+                width: 200,
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Icon(Icons.call_to_action_rounded),
+                    SizedBox(
+                      width: 8,
+                    ),
+                    Text('Card map info'),
                   ],
                 ),
               ),
