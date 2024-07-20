@@ -108,80 +108,62 @@ class CardInfoMapState extends State<CardInfoMap>
             child: Column(
               mainAxisSize: MainAxisSize.min,
               children: <Widget>[
-                Flexible(
-                  child: Text(widget.title,
-                      style: const TextStyle(
-                          fontSize: 22, fontWeight: FontWeight.w600)),
-                ),
+                Text(widget.title,
+                    textAlign: TextAlign.center,
+                    style: const TextStyle(
+                        fontSize: 22, fontWeight: FontWeight.w600)),
+                const SizedBox(height: 8),
+                Text(widget.businessType,
+                    textAlign: TextAlign.center,
+                    style: const TextStyle(fontSize: 18)),
                 const SizedBox(height: 15),
-                Flexible(
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Expanded(
-                        child: Text(widget.businessType,
-                            style: const TextStyle(fontSize: 14)),
-                      ),
-                      const SizedBox(height: 15),
-                      Expanded(
-                        child: Row(
-                          children: List.generate(
-                              5,
-                              (index) => Icon(Icons.star,
-                                  color: index < widget.rating
-                                      ? Colors.yellow
-                                      : Colors.grey)),
-                        ),
-                      ),
-                    ],
-                  ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: List.generate(
+                      5,
+                      (index) => Icon(Icons.star,
+                          color: index < widget.rating
+                              ? Colors.yellow
+                              : Colors.grey)),
                 ),
                 const SizedBox(height: 22),
-                Flexible(
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: <Widget>[
-                      Expanded(
-                        child: ElevatedButton(
-                          onPressed: () {},
-                          child: const FittedBox(
-                            fit: BoxFit.scaleDown,
-                            child: Row(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: [
-                                Icon(Icons.info_outline_rounded),
-                                SizedBox(
-                                  width: 8,
-                                ),
-                                Text('Ver info'),
-                              ],
-                            ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: <Widget>[
+                    Expanded(
+                      child: ElevatedButton(
+                        onPressed: () {},
+                        child: const FittedBox(
+                          fit: BoxFit.scaleDown,
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Icon(Icons.info_outline_rounded),
+                              SizedBox(width: 8),
+                              Text('Ver info'),
+                            ],
                           ),
                         ),
                       ),
-                      const SizedBox(
-                        width: 10,
-                      ),
-                      Expanded(
-                        child: ElevatedButton(
-                          onPressed: () {},
-                          child: const FittedBox(
-                            fit: BoxFit.scaleDown,
-                            child: Row(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: [
-                                Icon(Icons.roundabout_right_outlined),
-                                SizedBox(
-                                  width: 8,
-                                ),
-                                Text('Ver ruta'),
-                              ],
-                            ),
+                    ),
+                    const SizedBox(width: 10),
+                    Expanded(
+                      child: ElevatedButton(
+                        onPressed: () {},
+                        child: const FittedBox(
+                          fit: BoxFit.scaleDown,
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Icon(Icons.roundabout_right_outlined),
+                              SizedBox(width: 8),
+                              Text('Ver ruta'),
+                            ],
                           ),
                         ),
                       ),
-                    ],
-                  ),
+                    ),
+                  ],
                 ),
               ],
             ),
