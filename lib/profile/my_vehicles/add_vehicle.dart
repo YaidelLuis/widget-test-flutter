@@ -27,13 +27,20 @@ class AddVehicleState extends State<AddVehicle> {
           child: Column(
             children: <Widget>[
               TextFormField(
+                maxLength: 6,
                 controller: _matriculaController,
                 decoration: const InputDecoration(labelText: 'Matrícula'),
                 validator: (value) {
                   if (value == null || value.isEmpty) {
                     return 'Por favor introduce la matrícula';
                   }
-                  return null;
+                  Pattern pattern = r'^[A-Za-z]{3}[0-9]{3}$';
+                  RegExp regex = RegExp(pattern.toString());
+                  if (!regex.hasMatch(value)) {
+                    return 'Por favor, introduce una matrícula válida';
+                  } else {
+                    return null;
+                  }
                 },
               ),
               TextFormField(

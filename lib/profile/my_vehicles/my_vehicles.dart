@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:mytest/profile/my_vehicles/add_vehicle.dart';
 import 'package:mytest/profile/my_vehicles/model/vehicle.dart';
+import 'package:mytest/profile/my_vehicles/widget/card_vehicle.dart';
 
 class MyVehicles extends StatefulWidget {
   const MyVehicles({super.key});
@@ -62,9 +63,10 @@ class MyVehiclesState extends State<MyVehicles> {
           : ListView.builder(
               itemCount: vehiculos.length,
               itemBuilder: (context, index) {
-                return ListTile(
-                  title: Text(vehiculos[index].marcaModelo),
-                  subtitle: Text(vehiculos[index].matricula),
+                return CardVehicle(
+                  marcaModelo: vehiculos[index].marcaModelo,
+                  matricula: vehiculos[index].matricula,
+                  onTap: () {},
                 );
               },
             ),
