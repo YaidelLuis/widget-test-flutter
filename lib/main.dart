@@ -5,6 +5,7 @@ import 'package:mytest/dropdown/dropdown.dart';
 import 'package:mytest/expandable/expandable_title.dart';
 import 'package:mytest/profile/profile_screen.dart';
 import 'package:mytest/search/search.dart';
+import 'package:mytest/subscription_plan/subscription_plan.dart';
 import 'package:mytest/utils/commons.dart';
 import 'package:provider/provider.dart';
 
@@ -159,7 +160,7 @@ class MyHomePage extends StatelessWidget {
                 ),
               ),
             ),
-            //! Widget para mapa card info>
+            //! Widget para mapa card info
             ElevatedButton(
               onPressed: () {
                 Navigator.push(
@@ -177,6 +178,29 @@ class MyHomePage extends StatelessWidget {
                       width: 8,
                     ),
                     Text('Card map info'),
+                  ],
+                ),
+              ),
+            ),
+            //! Plan de subscripcion
+            ElevatedButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => const SubscriptionPage()),
+                );
+              },
+              child: const SizedBox(
+                width: 200,
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Icon(Icons.paypal_outlined),
+                    SizedBox(
+                      width: 8,
+                    ),
+                    Text('Subscription plan'),
                   ],
                 ),
               ),
